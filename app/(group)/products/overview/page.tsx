@@ -1,14 +1,12 @@
 import Overview from '@/components/Overview'
 import React from 'react'
 
-const Overviewpage = () => {
+const page = () => {
   return (
-
-    <div className='mt-24'>
+    <div>
         <Overview />
-
     </div>
   )
 }
 
-export default Overviewpage
+export default page

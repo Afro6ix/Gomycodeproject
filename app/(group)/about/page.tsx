@@ -40,7 +40,7 @@ const Aboutpage = () => {
 
             <div className='container mx-auto px-6 py-12'>
             <section className="text-gray-700">
-                            <div className="flex justify-center mt-10 text-4xl font-regular">
+                            <div className="flex justify-center mt-10 text-4xl font-bold font-rufina text-[#224f34]">
                             Why Us?
                             </div>
                         <div className="container px-5 py-12 mx-auto">
@@ -49,7 +49,7 @@ const Aboutpage = () => {
                                             <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
                                             <div className="flex justify-center">
                                                 <img src="Professionalism.png" 
-                                                className="w-64 mb-3" />
+                                                className="w-128 mb-3" />
                                             </div>
                                             <h2 className="title-font font-regular text-2xl text-gray-900">Professionalism</h2>
                                             </div>
@@ -58,7 +58,7 @@ const Aboutpage = () => {
                                         <div className="p-4 md:w-1/4 sm:w-1/2">
                                             <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
                                             <div className="flex justify-center">
-                                                <img src="Transfer.png" className="w-64 mb-3" />
+                                                <img src="Transfer.png" className="w-128 mb-3" />
                                             </div>
                                             <h2 className="title-font font-regular text-2xl text-gray-900">Fast and Reliable</h2>
                                             </div>
@@ -68,7 +68,7 @@ const Aboutpage = () => {
                                             <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
                                             <div className="flex justify-center">
                                                 <img src="Network.png
-                                                " className="w-64 mb-3" />
+                                                " className="w-128 mb-3" />
                                             </div>
                                             <h2 className="title-font font-regular text-2xl text-gray-900">Effective Network</h2>
                                             </div>
@@ -77,7 +77,7 @@ const Aboutpage = () => {
                                         <div className="p-4 md:w-1/4 sm:w-1/2">
                                                 <div className="px-4 py-6 transform transition duration-500 hover:scale-110">
                                                 <div className="flex justify-center">
-                                                    <img src="Aim.png" className="w-64 mb-3" />
+                                                    <img src="Aim.png" className="w-128 mb-3" />
                                                 </div>
                                                 <h2 className="title-font font-regular text-2xl text-gray-900">Aims Achieved</h2>
                                                 </div>

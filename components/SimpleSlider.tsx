@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Slider from "react-slick";
+import Image from "next/image";
 
 export default function SimpleSlider() {
   var settings = {
@@ -14,35 +15,119 @@ export default function SimpleSlider() {
   return (
     <Slider {...settings}>
 
+      <div className="relative w-full h-[750px]">
+        {/* IMAGE */}
+        <img
+          src="/carl1.png" 
+          alt="Landing Background"
+          className="w-full h-full"
+        />
 
-      <div className="bg-red-500">
-      <h3>1</h3>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 flex items-center justify-end pr-36">
+          <div className="text-left text-white max-w-xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Welcome to Our Store
+            </h1>
+            <p className="text-lg md:text-2xl mb-6">
+              Explore the best products for your lifestyle.
+            </p>
+            <button className="bg-green-500 text-black px-6 py-3 rounded-md hover:bg-green-600 hover:cursor-pointer transition duration-300">
+              Shop Now
+            </button>
+          </div>
+        </div>
       </div>
 
 
-      <div className="bg-green-500">
-      <h3>2</h3>
+           <div className="relative w-full h-[750px]">
+        {/* IMAGE */}
+        <img
+          src="/carl2.png" 
+          alt="Landing Background"
+          className="w-full h-full"
+        />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 flex items-center justify-end pr-36">
+          <div className="text-left text-white max-w-xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Swing above the Pines
+            </h1>
+            <p className="text-lg md:text-2xl mb-6">
+              Everything You Need for the Perfect Swing.
+            </p>
+            <button className="bg-green-500 text-black px-6 py-3 rounded-md hover:bg-green-600 hover:cursor-pointer transition duration-300">
+              View Products
+            </button>
+          </div>
+        </div>
       </div>
 
 
-      <div className="bg-blue-500">
-      <h3>3</h3>
+           <div className="relative w-full h-[750px] bg-red-900">
+        {/* IMAGE */}
+        <img
+          src="/carl3.png" 
+          alt="Landing Background"
+          className="w-full h-full"
+        />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
+
+        {/* OVERLAY */}
+        <div className="absolute inset-0 flex items-center justify-end pr-36">
+          <div className="text-left text-white max-w-xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Your Golf Journey Starts Here
+            </h1>
+            <p className="text-lg md:text-2xl mb-6">
+              Gear Up. Tee Off. Play Your Best.
+            </p>
+            <button className="bg-green-500 text-black px-6 py-3 rounded-md hover:bg-green-600 hover:cursor-pointer transition duration-300">
+              Shop Now
+            </button>
+          </div>
+        </div>
       </div>
 
 
-       <div className="bg-pink-500">
-       <h3>4</h3>
-       </div>
+           <div className="relative w-full h-[750px] bg-red-900">
+        {/* IMAGE */}
+        <img
+          src="/carl4.png" 
+          alt="Landing Background"
+          className="w-full h-full"
+        />
 
-       <div className="bg-purple-500">
-       <h3>5</h3>
-       </div>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-black/50" />
 
-       <div className="bg-yellow-500">
-       <h3>6</h3>
-       </div>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 flex items-center justify-end pr-36">
+          <div className="text-left text-white max-w-xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              The Home of Quality Golf Gear
+            </h1>
+            <p className="text-lg md:text-2xl mb-6">
+              Trusted by Golfers. Driven by Passion..
+            </p>
+            <button className="bg-green-500 text-black px-6 py-3 rounded-md hover:bg-green-600 hover:cursor-pointer transition duration-300">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
 
 
+    
      </Slider>
   );
 }

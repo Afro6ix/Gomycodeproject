@@ -2,65 +2,65 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import path from 'path'
+
 
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false)
+  const pathname = usePathname()
 
   const cartCount = 0 // Replace with dynamic value later
 
+  
+
+
   return (
-    <nav className="bg-white shadow-lg w-full top-0 z-50">
+    <nav className="bg-white shadow-lg w-full top-0 z-50 h-[80px] flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img className="h-8 w-auto rounded-full" src="/Logo.png" alt="Logo" />
-            <span className="ml-2 text-xl font-bold text-black">Jaara Golf</span>
+            <span className="ml-2 text-xl font-bold text-black">AJ Golf</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden sm:flex items-center w-full justify-between">
             {/* Left Links */}
             <div className="flex space-x-4 items-center">
-              <Link href="/" className="text-gray-900 hover:text-green-600 hover:underline px-3 py-2 text-sm font-medium">
+              <Link href="/" className={`px-3 py-2 text-sm font-medium ${pathname === '/' ? 'text-green-600 underline' : 'text-gray-900'}`}>
                 Home
               </Link>
 
               {/* Products Dropdown */}
               <div className="relative group">
-                <button className="flex items-center text-gray-900 hover:text-green-500 hover:underline px-3 py-2 text-sm font-medium">
+                <button className="flex items-center text-gray-900 hover:text-green-500 hover:underline px-3 py-2 text-sm font-medium"><Link href={`/products`} className={`px-3 py-2 text-sm font-medium ${pathname === '/products' ? 'text-green-600 underline' : 'text-gray-900'} `}>
                   Products
-                  <svg className="ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
+                </Link></button>
                 {/* Mega Menu */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                   <div className="flex  md:flex-row p-6 md:space-y-0 md:space-x-8">
                     {/* Left Column */}
-                    <Link href="/Products/Overview" className="text-gray-600 hover:text-green-600">Overview</Link>
-                    <Link href="/Products/Brands" className="text-gray-600 hover:text-green-600">Brands</Link>
+                    <Link href="/products/overview" className="text-gray-600 hover:text-green-600">Overview</Link>
+                    <Link href="/products/brand" className="text-gray-600 hover:text-green-600">Brands</Link>
                     <Link href="#" className="text-gray-600 hover:text-green-600">Categories</Link>
                     <Link href="#" className="text-gray-600 hover:text-green-600">Collections</Link>
                   </div>
                 </div>
               </div>
 
-              <Link href="/About" className="text-gray-900 hover:text-green-500 hover:underline px-3 py-2 text-sm font-medium">
+              <Link href="/about" className={`px-3 py-2 text-sm font-medium ${pathname === '/about' ? 'text-green-600 underline' : 'text-gray-900'} `}>
                 About
               </Link>
-              <Link href="/Contact" className="text-gray-900 hover:text-green-500 hover:underline px-3 py-2 text-sm font-medium">
+              <Link href="/contact" className={`px-3 py-2 text-sm font-medium ${pathname === '/contact' ? 'text-green-600 underline' : 'text-gray-900'}`}>
                 Contact
               </Link>
 
               {/* Cart with Badge */}
-              <Link href="/Cart" className="relative text-gray-900 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/cart" className="relative text-gray-900 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">
                 <ShoppingCart className="h-6 w-6 inline-block" />
                 <span className="absolute top-1 right-2 transform translate-x-1/2 -translate-y-1/2 bg-green-600 text-white rounded-full w-5 h-5 flex items-center justify-center">
                 {cartCount}
@@ -88,10 +88,10 @@ const Header = () => {
 
             {/* Auth */}
             <div className="flex items-center space-x-4">
-              <Link href="/Login" className="text-gray-900 hover:text-green-500 px-3 py-2 text-sm font-medium">
+              <Link href="/login" className="text-gray-900 hover:text-green-500 px-3 py-2 text-sm font-medium">
                 Login
               </Link>
-              <Link href="/SignUp" className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700">
+              <Link href="/signUp" className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700">
                 Sign Up
               </Link>
             </div>
@@ -121,33 +121,32 @@ const Header = () => {
             <button
               onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
               className="flex justify-between w-full px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium"
-            >
-              Products
+            ><Link href="/products">
+              Products</Link>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
             {mobileDropdownOpen && (
               <div className="pl-4 mt-2 space-y-2">
-                <Link href="#" className="block text-gray-600 hover:text-green-600">Overview</Link>
-                <Link href="#" className="block text-gray-600 hover:text-green-600">Brands</Link>
+                <Link href="/products/overview" className="block text-gray-600 hover:text-green-600">Overview</Link>
+                <Link href="/products/brand" className="block text-gray-600 hover:text-green-600">Brands</Link>
                 <Link href="#" className="block text-gray-600 hover:text-green-600">Categories</Link>
                 <Link href="#" className="block text-gray-600 hover:text-green-600">Collections</Link>
               </div>
             )}
           </div>
 
-          <Link href="/About" className="block px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">About</Link>
-          <Link href="/Contact" className="block px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">Contact</Link>
-          <Link href="/Cart" className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">
-            <i className="fas fa-shopping-cart mr-2"></i>
-            Cart ({cartCount})
+          <Link href="/about" className="block px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">About</Link>
+          <Link href="/contact" className="block px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">Contact</Link>
+          <Link href="/cart" className="flex items-center px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">
+          <ShoppingCart className="h-6 w-6 inline-block" />Cart({cartCount})
           </Link>
 
           {/* Auth Buttons */}
           <div className="border-t pt-4">
-            <Link href="/Login" className="block px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">Login</Link>
-            <Link href="/SignUp" className="block px-3 py-2 text-white bg-green-600 text-center rounded-md text-base font-medium hover:bg-green-700">Sign Up</Link>
+            <Link href="/login" className="block px-3 py-2 text-gray-900 hover:bg-gray-100 rounded-md text-base font-medium">Login</Link>
+            <Link href="/signUp" className="block px-3 py-2 text-white bg-green-600 text-center rounded-md text-base font-medium hover:bg-green-700">Sign Up</Link>
           </div>
         </div>
       )}

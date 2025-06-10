@@ -1,14 +1,7 @@
-import React from 'react'
-import SimpleSlider from '@/components/SimpleSlider'
+import { redirect } from "next/navigation";
 
 const page = () => {
-
-
-  return (
-    <div>
-      <SimpleSlider />  
-    </div>
-  )
+  redirect('/home');
 }
 
 export default page

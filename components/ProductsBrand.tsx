@@ -157,7 +157,7 @@ export const golfBrands = [
 ]
 
 
-const ProductsBrand = () => {
+const Brands = () => {
 
   return (
     <div className="container mx-auto mb-10 flex flex-wrap justify-center items-center gap-4 p-4 lg:p-8 bg-gray-100 md:bg-gray-200 lg:bg-gray-300 rounded-lg shadow-md sm:gap-6 md:gap-8 lg:gap-10">
@@ -172,4 +172,4 @@ const ProductsBrand = () => {
   )
 }
 
-export default ProductsBrand
+export default Brands
