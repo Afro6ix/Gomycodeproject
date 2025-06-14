@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import path from 'path'
+import { useCart } from '@/context/CartContext';
 
 
 
@@ -12,7 +13,8 @@ const Header = () => {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false)
   const pathname = usePathname()
 
-  const cartCount = 0 // Replace with dynamic value later
+    const { cartCount } = useCart();
+
 
   
 
@@ -47,7 +49,6 @@ const Header = () => {
                     <Link href="/products/overview" className="text-gray-600 hover:text-green-600">Overview</Link>
                     <Link href="/products/brand" className="text-gray-600 hover:text-green-600">Brands</Link>
                     <Link href="#" className="text-gray-600 hover:text-green-600">Categories</Link>
-                    <Link href="#" className="text-gray-600 hover:text-green-600">Collections</Link>
                   </div>
                 </div>
               </div>
@@ -62,10 +63,13 @@ const Header = () => {
               {/* Cart with Badge */}
               <Link href="/cart" className="relative text-gray-900 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">
                 <ShoppingCart className="h-6 w-6 inline-block" />
-                <span className="absolute top-1 right-2 transform translate-x-1/2 -translate-y-1/2 bg-green-600 text-white rounded-full w-5 h-5 flex items-center justify-center">
-                {cartCount}
-                </span>
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-3 bg-green-500 text-xs px-2 py-1 rounded-full text-white">
+                    {cartCount}
+                  </span>
+                )}
               </Link>
+
             </div>
 
             {/* Search Bar */}
@@ -132,7 +136,6 @@ const Header = () => {
                 <Link href="/products/overview" className="block text-gray-600 hover:text-green-600">Overview</Link>
                 <Link href="/products/brand" className="block text-gray-600 hover:text-green-600">Brands</Link>
                 <Link href="#" className="block text-gray-600 hover:text-green-600">Categories</Link>
-                <Link href="#" className="block text-gray-600 hover:text-green-600">Collections</Link>
               </div>
             )}
           </div>

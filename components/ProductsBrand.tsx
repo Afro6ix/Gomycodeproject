@@ -45,7 +45,7 @@ export const golfBrands = [
   {
     id: 9,
     name: "PXG",
-    logo: "Pxg.png"
+    logo: "/Pxg.png"
   },
   {
     id: 10,
@@ -55,102 +55,102 @@ export const golfBrands = [
   {
     id: 11,
     name: "Penfold Golf",
-    logo: "Penfolds.png"
+    logo: "/Penfolds.png"
   },
   {
     id: 12,
     name: "MacGregor Golf",
-    logo: "Macgregor.png"
+    logo: "/Macgregor.png"
   },
   {
     id: 13,
     name: "Bridgestone Golf",
-    logo: "BridgestoneGolf.png"
+    logo: "/BridgestoneGolf.png"
   },
   {
     id: 14,
     name: "Galvin Green",
-    logo: "Galvingreen.png"
+    logo: "/Galvingreen.png"
   },
   {
     id: 15,
     name: "Malbon Golf",
-    logo: "Malbon.png"
+    logo: "/Malbon.png"
   },
   {
     id: 16,
     name: "Eastside Golf",
-    logo: "EastsideGolf.png"
+    logo: "/EastsideGolf.png"
   },
   {
     id: 17,
     name: "Asher Golf",
-    logo: "AsherGolf.png"
+    logo: "/AsherGolf.png"
   },
   {
     id: 18,
     name: "SuperStroke",
-    logo: "Superstroke.png"
+    logo: "/Superstroke.png"
   },
   {
     id: 19,
     name: "Takomo",
-    logo: "Takomo.png"
+    logo: "/Takomo.png"
   },
   {
     id: 20,
     name: "Ben Hogan Golf",
-    logo: "Benhogan.png"
+    logo: "/Benhogan.png"
   },
   {
     id: 21,
     name: "New Level Golf",
-    logo: "Newlevel.png"
+    logo: "/Newlevel.png"
   },
   {
     id: 22,
     name: "FootJoy",
-    logo: "Footjoy.png"
+    logo: "/Footjoy.png"
   },
   {
     id: 23,
     name: "Puma",
-    logo: "Puma.png"
+    logo: "/Puma.png"
   },
   {
     id: 24,
     name: "Nike Golf",
-    logo: "Nikegolf.png"
+    logo: "/Nikegolf.png"
   },
   {
     id: 25,
     name: "Adidas Golf",
-    logo: "AdidasGolf.png"
+    logo: "/AdidasGolf.png"
   },
   {
     id: 26,
     name: "Under Armour Golf",
-    logo: "UnderArmour.png"
+    logo: "/UnderArmour.png"
   },
   {
     id: 27,
     name: "J. Lindeberg",
-    logo: "JLindeberg.png"
+    logo: "/JLindeberg.png"
   },
   {
     id: 28,
     name: "Sunday Golf",
-    logo: "Sundaygolf.png"
+    logo: "/Sundaygolf.png"
   },
   {
     id: 29,
     name: "Manors",
-    logo: "Manors.png"
+    logo: "/Manors.png"
   },
   {
     id: 30,
     name: "GolfWear",
-    logo: "Golfwear.png"
+    logo: "/Golfwear.png"
   },
  
 

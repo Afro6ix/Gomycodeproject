@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="px-4 mb-4 w-full xl:w-1/5">
             <a href="/" className="w-56 mb-5 flex items-center gap-[10px]">
               <img src="/Logo.png" alt="Logo" width={50} height={50}/>
-              <tspan className='fill-white text-2xl font-bold' x="654" y="518">AJ Golf</tspan>
+              <span className='fill-white text-2xl font-bold' x="654" y="518">AJ Golf</span>
             </a>
             <p className="text-justify">
              The excellence of the golf experience from the comfort of your home, office or anywhere that suits your style. With over seven years experience in the industry, we bring you the best of the best.
