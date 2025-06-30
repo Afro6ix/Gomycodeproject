@@ -3,210 +3,18 @@ import React from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
+import GolfShirts  from '@/components/GolfShirts';
+import GolfShoes from '@/components/GolfShoes';
+import GolfTrousers from '@/components/GolfTrousers';
+import Balls from '@/components/Balls';
+import Bags from '@/components/Bags';
+import Trolleys from '@/components/GolfTrolleys';
+import Tees from '@/components/GolfTees';
+import Gloves from '@/components/GolfGloves';
+import RangeFinder from '@/components/RangeFinder';
 
 function Categories() {
   const { addToCart } = useCart();
-
-  const GolfShirts = [
-  {
-    id: 1,
-    name: "Titliest Prime Shirt",
-    image: "/categories/TitliestPrimeBlack.png",
-    price: 25000
-},
-{
-  id: 2,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeGrey.png",
-  price: 25000
-},
-{
-  id: 3,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeBrown.png",
-  price: 25000
-},
-{
-  id: 4,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeGrey.png",
-  price: 25000
-},
-{
-  id: 5,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeBlack.png",
-  price: 25000
-},
-{
-  id: 6,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeBrown.png",
-  price: 25000
-},
-{
-  id: 7,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeBrown.png",
-  price: 25000
-},
-{
-  id: 8,
-  name: "Titliest Prime Shirt",
-  image: "/categories/TitliestPrimeGrey.png",
-  price: 25000
-}];
-
-  const GolfTrousers = [
-    {
-      id: 1,
-      name: "Titliest Prime Trousers",
-      image: "/categories/GreenTrouser.png",
-      price: 65000
-  },
-  {
-    id: 2,
-    name: "Titliest Prime Trousers",
-    image: "/categories/BlackTrouser.png",
-    price: 85000
-  },
-  {
-    id: 3,
-    name: "Titliest Prime Trousers",
-    image: "/categories/LightBrown.png",
-    price: 65000
-  },
-  {
-    id: 4,
-    name: "Titliest Prime Trousers",
-    image: "/categories/BlackTrouser.png",
-    price: 85000
-  },
-  {
-    id: 5,
-    name: "Titliest Prime Trousers",
-    image: "/categories/GreenTrouser.png",
-    price: 65000
-  },
-  {
-    id: 6,
-    name: "Titliest Prime Trousers",
-    image: "/categories/LightBrown.png",
-    price: 85000
-  },
-  {
-    id: 7,
-    name: "Titliest Prime Trousers",
-    image: "/categories/BlackTrouser.png",
-    price: 65000
-  },
-  {
-    id: 8,
-    name: "Titliest Prime Trousers",
-    image: "/categories/GreenTrouser.png",
-    price: 85000
-  },
-  {
-    id: 9,
-    name: "Titliest Prime Trousers",
-    image: "/categories/LightBrown.png",
-    price: 65000
-  }     
-  ];
-
-   const GolfShoes = [
-    {
-      id: 1,
-      name: "Titliest Prime Shoes",
-      image: "/categories/Shoe1.png",
-      price: 57500
-  },
-  {
-    id: 2,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe2.png",
-    price: 85000
-  },
-  {
-    id: 3,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe3.png",
-    price: 65000
-  },
-  {
-    id: 4,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe4.png",
-    price: 75000
-  },
-  {
-    id: 5,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe5.png",
-    price: 65000
-  },
-  {
-    id: 6,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe6.png",
-    price: 85000
-  },
-  {
-    id: 7,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe7.png",
-    price: 65000
-  },
-  {
-    id: 8,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe8.png",
-    price: 85000
-  },
-  {
-    id: 9,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe9.png",
-    price: 65000
-  },
-  {
-    id: 10,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe10.png",
-    price: 85000
-  },
-  {
-    id: 11,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe11.png",
-    price: 65000
-  },
-  {
-    id: 12,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe12.png",
-    price: 85000
-  },
-  {
-    id: 13,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe13.png",
-    price: 65000
-  },
-  {
-    id: 14,
-    name: "Titliest Prime Shoes",
-    image: "/categories/Shoe14.png",
-    price: 85000
-  },
-  {
-    id: 15,
-    name: "Golf Shoes",
-    image: "/categories/Shoe15.png",
-    price: 65000
-  }
-  ] 
-
 
   const settings = {
     dots: true,
@@ -219,7 +27,9 @@ function Categories() {
 
   return (
     <div className="p-6">
-      <Slider {...settings} className="mb-6">
+      
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Shirts</h2>
+      <Slider {...settings} className="mb-10 container mx-auto animate-slide">
         {GolfShirts.map((item) => (
           <div key={item.id}>
             <Image src={item.image} alt={item.name} width={300} height={300} />
@@ -229,7 +39,7 @@ function Categories() {
               <button
                onClick={() =>
                addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
-                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
               >
                 Add to Cart
               </button>
@@ -237,8 +47,9 @@ function Categories() {
           </div>
         ))}
       </Slider>
-
-      <Slider {...settings} className="mb-6">
+      
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Trousers</h2>
+      <Slider {...settings} className="mb-10 container mx-auto">
         {GolfTrousers.map((item) => (
           <div key={item.id}>
             <Image src={item.image} alt={item.name} width={300} height={300} />
@@ -248,7 +59,7 @@ function Categories() {
               <button
                 onClick={() =>
                addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
-                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
               >
                 Add to Cart
               </button>
@@ -256,8 +67,10 @@ function Categories() {
           </div>
         ))}
       </Slider>
+      
 
-      <Slider {...settings}>
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Shoes</h2>
+      <Slider {...settings} className="mb-10 container mx-auto">
         {GolfShoes.map((item) => (
           <div key={item.id}>
             <Image src={item.image} alt={item.name} width={300} height={300} />
@@ -267,7 +80,127 @@ function Categories() {
               <button
               onClick={() =>
                addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
-                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
+       <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Balls</h2>
+       <Slider {...settings} className="mb-10 container mx-auto">
+        {Balls.map((item) => (
+          <div key={item.id}>
+            <Image src={item.image} alt={item.name} width={300} height={300} />
+            <div className="text-center mt-2">
+              <p className="font-semibold">{item.name}</p>
+              <p className="font-bold">₦{item.price}</p>
+              <button
+              onClick={() =>
+               addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
+       <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Bags</h2>
+       <Slider {...settings} className="mb-10 container mx-auto">
+        {Bags.map((item) => (
+          <div key={item.id}>
+            <Image src={item.image} alt={item.name} width={400} height={400} />
+            <div className="text-center mt-2">
+              <p className="font-semibold">{item.name}</p>
+              <p className="font-bold">₦{item.price}</p>
+              <button
+              onClick={() =>
+               addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Trolleys</h2>
+       <Slider {...settings} className="mb-10 container mx-auto">
+        {Trolleys.map((item) => (
+          <div key={item.id}>
+            <Image src={item.image} alt={item.name} width={400} height={400} />
+            <div className="text-center mt-2">
+              <p className="font-semibold">{item.name}</p>
+              <p className="font-bold">₦{item.price}</p>
+              <button
+              onClick={() =>
+               addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Tees</h2>
+       <Slider {...settings} className="mb-10 container mx-auto">
+        {Tees.map((item) => (
+          <div key={item.id}>
+            <Image src={item.image} alt={item.name} width={300} height={300} />
+            <div className="text-center mt-2">
+              <p className="font-semibold">{item.name}</p>
+              <p className="font-bold">₦{item.price}</p>
+              <button
+              onClick={() =>
+               addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Gloves</h2>
+       <Slider {...settings} className="mb-10 container mx-auto">
+        {Gloves.map((item) => (
+          <div key={item.id}>
+            <Image src={item.image} alt={item.name} width={300} height={300} />
+            <div className="text-center mt-2">
+              <p className="font-semibold">{item.name}</p>
+              <p className="font-bold">₦{item.price}</p>
+              <button
+              onClick={() =>
+               addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+
+      <h2 className="text-3xl text-gray-800 font-bold mb-4 container mx-auto">Range Finders</h2>
+       <Slider {...settings} className="mb-10 container mx-auto">
+        {RangeFinder.map((item) => (
+          <div key={item.id}>
+            <Image src={item.image} alt={item.name} width={300} height={300} />
+            <div className="text-center mt-2">
+              <p className="font-semibold">{item.name}</p>
+              <p className="font-bold">₦{item.price}</p>
+              <button
+              onClick={() =>
+               addToCart({ id: item.id, name: item.name, image: item.image, price: item.price })}
+                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
               >
                 Add to Cart
               </button>

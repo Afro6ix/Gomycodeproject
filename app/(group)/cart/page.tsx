@@ -8,16 +8,16 @@ export default function CartPage() {
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <section className="p-6 max-w-3xl mx-auto">
+    <section className="container p-6 max-w-3xl mx-auto">
       <h2 className="text-2xl font-bold mb-4">🛒 Your Cart</h2>
 
       {cartItems.length === 0 ? (
         <p className="text-gray-500">Your cart is empty.</p>
       ) : (
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col justify-between">
           {cartItems.map((item) => (
             <div key={item.id} className="flex gap-4 border-b pb-4">
-              <Image src={item.image} alt={item.name} width={80} height={80} />
+              <Image src={item.image} alt={item.name} width={100} height={100} />
               <div className="flex-1">
                 <p className="font-semibold">{item.name}</p>
                 <p>₦{item.price.toLocaleString()}</p>

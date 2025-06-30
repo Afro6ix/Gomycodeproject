@@ -2,8 +2,70 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { User } from 'lucide-react';
+
+interface LoginInterface {
+  email: string;
+  password: string;
+  terms: boolean;
+}
+
 
 const LoginPage = () => {
+
+   const [loginPageData, setLoginPageData] = useState<LoginInterface>({
+    email: '',
+    password: '',
+    terms: false,
+  });
+
+    const [errors, setErrors] = useState<string>('');
+
+
+    // Login Form Validation
+    async function handleSubmit(event:any) {
+    event.preventDefault();
+
+    // Perform login logic here
+
+    // Reset form fields
+    setLoginPageData({
+      email: '',
+      password: '',
+      terms: false,
+    });
+    
+     const { email, password, terms } = loginPageData;
+
+    if (!email) {
+      setErrors("Email is required");
+      return;
+    }
+
+    if (!password) {
+      setErrors("Password is required");
+      return;
+    }
+
+    if (!terms) {
+      setErrors("You must agree to the terms and conditions");
+      return;
+    }
+
+
+    const response = await fetch ("/api/login", {
+      method: "POST",
+      body: JSON.stringify(User),
+      headers: {
+        "Content-Type" : "application/json"
+      }
+    })
+
+    const json = await response.json()
+
+   };
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-10 bg-gray-100">
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 bg-white shadow-2xl rounded-3xl overflow-hidden">
@@ -25,12 +87,15 @@ const LoginPage = () => {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-6 sm:mb-8 text-center md:text-left">
             Sign in to your account
           </h2>
+          {errors && <p className="text-red-500 mb-4">{errors}</p>}
 
           <form className="space-y-6">
             {/* Email Input */}
             <div className="relative">
               <input
                 type="email"
+                value={loginPageData.email}
+                onChange={(e) => setLoginPageData({ ...loginPageData, email: e.target.value })}
                 id="email"
                 name="email"
                 required
@@ -49,6 +114,8 @@ const LoginPage = () => {
             <div className="relative">
               <input
                 type="password"
+                value={loginPageData.password}
+                onChange={(e) => setLoginPageData({ ...loginPageData, password: e.target.value })}
                 id="password"
                 name="password"
                 required
@@ -66,15 +133,19 @@ const LoginPage = () => {
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between text-sm">
               <label className="flex items-center gap-2 text-gray-600">
-                <input type="checkbox" className="accent-green-600" />
+                <input 
+                type="checkbox" 
+                checked={loginPageData.terms} 
+                className="accent-green-600" />
                 Remember me
               </label>
-              <a href="#" className="text-green-600 hover:underline">Forgot password?</a>
+              <a href="/forgotpassword" className="text-green-600 hover:underline">Forgot password?</a>
             </div>
 
             {/* Sign In Button */}
             <button
               type="submit"
+              onClick={handleSubmit}
               className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition duration-300 shadow-lg"
             >
               Sign In
@@ -99,10 +170,10 @@ const LoginPage = () => {
           {/* Sign Up and Home Links */}
           <p className="text-center text-sm text-gray-600 mt-6">
             Don’t have an account?{' '}
-            <a href="/signUp" className="text-green-600 hover:underline">Sign up</a>
+            <a href="/register" className="text-green-600 hover:underline">Register</a>
           </p>
           <p className="text-center text-sm text-gray-600 mt-2">
-            <Link href="/" className="text-blue-600 hover:underline">← Back to Home</Link>
+            <Link href="/home" className="text-blue-600 hover:underline">← Back to Home</Link>
           </p>
         </div>
       </div>
